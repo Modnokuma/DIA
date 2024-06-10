@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>DIA Pract 2</title>
+    <meta content="baltasarq@uvigo.gal" name="author">
+  </head>
+  <body style="background-color: white;">
+    <h1 style="background-color:lightgray"><span style="font-weight: bold;">Desarrollo
+        e Integraci&#243;n de Aplicaciones</span> - <span style="text-decoration: underline;">Pr&#225;ctica
+        2</span></h1>
+    <h2 style="background-color:navy;color:white"><span style="font-weight: bold;">Enlaces</span></h2>
+    <ul>
+      <li><a title="Microsoft .NET" target="_blank" href="http://dotnet.microsoft.com/">Microsoft .NET</a></li>
+    </ul>
+    <ul>
+      <li>Conceptos necesarios:</li>
+      <ul>
+        <li><a title="Clases en C#" target="_blank" href="https://learn.microsoft.com/es-es/dotnet/csharp/fundamentals/types/classes">Clases</a></li>
+        <li><a title="Matrices en C#" target="_blank" href="https://learn.microsoft.com/es-es/dotnet/csharp/language-reference/builtin-types/arrays">Matrices</a></li>
+        <li><a target="_blank" href="https://learn.microsoft.com/es-es/dotnet/csharp/language-reference/builtin-types/reference-types">Cadenas</a></li>
+        <li><a title="Propiedades en C#" target="_blank" href="https://learn.microsoft.com/es-es/dotnet/csharp/properties">Propiedades</a></li>
+        <li><a target="_blank" href="https://learn.microsoft.com/es-es/dotnet/csharp/fundamentals/object-oriented/polymorphism">Polimorfismo</a></li>
+        <li> <a target="_blank" title="Manejo de XML" target="_blank" href="https://ideone.com/2rfNjG">Manejo de XML desde C#.</a></li>
+      </ul>
+    </ul>
+    <h2 style="background-color:navy;color:white"><span style="font-weight: bold;">Ejercicios</span></h2>
+    <ol>
+      <li><div style="text-align: justify;">
+        Una tienda de reparaciones de electrónica tiene distintos tipos de aparatos
+        contemplados para su reparación: Radios, Televisores, Reproductores de DVD y
+        adaptadores de TDT, cada uno con su tarifa de reparación por hora (5, 10, 10 y 5
+        euros, respectivamente). De todos los aparatos se guarda su nº de serie, su modelo
+        y su precio de reparación por hora. De las radios se guardan las bandas que
+        es capaz de manejar (AM/FM o ambas), de los televisores sus pulgadas, de los
+        reproductores de DVD si reproducen Blue-Ray y también si graban o no,
+        y en su caso el tiempo de grabación;
+        y de los adaptadores de TDT el tiempo máximo de grabación si la soporta.
+        Una reparación toma el precio por horas para el aparato,
+        y lo aplica en segmentos de media hora, haciendo la oportuna conversión.
+        Si la reparación lleva una hora o menos, se considera sustitución de piezas,
+        y se respeta el precio por hora estipulado para el aparato. En caso de
+        superar la hora, entonces se trata de una reparación compleja, y se cobra
+        aplicando un sobreprecio del 25% a los precios por hora trabajada asignados
+        para cada aparato.
+        Todas las reparaciones tienen un precio base de 10€, y el precio de las
+        piezas se cobra aparte de las horas trabajadas.
+        Debe haber una jerarqu&#237;a de clases para los
+          aparatos y para las reparaciones. Las reparaciones creadas serán guardadas
+        autom&#225;ticamente en <i>reparaciones.xml</i> al finalizar la
+        ejecuci&#243;n, y recuperados, de existir el fichero, al
+        finalizarla. Debe haber una jerarqu&#237;a de clases para los
+          aparatos y para las reparaciones. Las reparaciones creadas serán guardadas
+        autom&#225;ticamente en <i>reparaciones.xml</i> al finalizar la
+        ejecuci&#243;n, y recuperados, de existir el fichero, al
+        finalizarla.
+       </div></li>
+       <br/>
+       <li><div style="text-align: justify;">
+       El control de un puerto debe descargar contenedores y distribuirlos
+       a los centros logísticos correspondientes. Para ello cuenta con camiones
+       de dos toneladas (o "grandes"), que son capaces de cargar con dos contenedores
+       de 800kg., o uno de 1.5tm.; y con camiones de una tonelada ("pequeño"),
+       que solo son capaces de cargar con contenedores de 800kg.
+       Cuando llega un barco, lo que supone un número determinado tanto de contenedores
+       de 0.8tm. como de 1.5tm., el control del puerto debe asignar los contenedores
+       a la flota de camiones de manera que queden disponibles el mayor número posible
+       de camiones (si bien es posible que toda la flota realice varios viajes).
+       Así, una distribución estará compuesta de varios viajes (al menos uno),
+       según el tamaño de la flota de transporte.
+       Cree una aplicación que permita dar de baja camiones o insertarlos de la flota
+       de transporte, y que, cada vez que llega un barco, permita también
+       crear los viajes necesarios (al menos uno), con aquellos camiones disponibles
+       según los contenedores transportados por el mercante. Cree una interfaz
+       gráfica para toda la aplicación, y guarde los datos de los camiones y
+       de las distribuciones realizadas en un archivo XML, recuperándolo al
+       arrancar.
+       </div></li>
+    </ol>
+    <h2 style="background-color:navy;color:white"><span style="font-weight: bold;">Ejercicios resueltos</span></h2>
+    <ol>
+      <li>
+        <div style="text-align: justify;">Una compa&#241;&#237;a de autobuses
+          tiene tres tipos de autocares: el "larga distancia", el "intercity" y
+          el "metropolitano", cada uno con un número de asientos y velocidad
+          máxima específica. A la vez, tiene cinco tipos de recorridos:
+          urbanos, interurbanos, provinciales, nacionales e internacionales, de
+          forma que cada uno de ellos permite a los autobuses desarrollar su
+          máxima velocidad un porcentaje del tiempo total (10%, 50%, 80%, 80%, y 90%,
+          respectivamente).
+          Realizar un programa que lea por teclado una serie de datos en la
+          forma: inicio, destino, kms totales; almacene estos datos
+          asign&#225;ndoles un c&#243;digo, y decida el tipo de recorrido y
+          autob&#250;s y finalmente produzca un listado de los viajes
+          introducidos con su duración y su hora de llegada esperada (tomando como
+          partida la fecha y hora actual, y un solo conductor que debe descansar
+          cada seis horas). Debe haber una jerarqu&#237;a de clases para los
+          autobuses y para los recorridos. Las funciones de impresi&#243;n deben
+          ser abstractas y estar declaradas en la clase base.
+        Adem&#225;s, los recorridos creados ser&#225;n guardados
+        autom&#225;ticamente en <em>viajes.xml</em> al finalizar la
+        ejecuci&#243;n, y recuperados, de existir el fichero, al
+        finalizarla.</div>
+        <br/>
+        <a href="https://github.com/Baltasarq/AvVisualViajes" target="_blank">Solución a VisualViajes en GitHub</a> (en este punto, solo es relevante <a href="https://github.com/Baltasarq/VisualViajes/tree/master/View" target="_blank">la interfaz de consola de VisualViajes, <i>ConsoleUI.cs</i></a>).
+        </li>
+    </ol>
+    <p style="background-color:navy;color:white;text-align:right"><span style="font-weight: bold;">baltasarq@uvigo.gal</span></p>
+  </body>
+</html>

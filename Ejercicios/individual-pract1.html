@@ -1,0 +1,507 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>DIA Pract 1</title>
+    <meta content="baltasarq@uvigo.gal" name="author">
+  </head>
+  <body style="background-color: white; text-align: justify">
+    <h1 style="background-color:lightgray"><span style="font-weight: bold;">Desarrollo
+        e Integración de Aplicaciones</span> - <span style="text-decoration: underline;">Práctica
+        1</span></h1>
+    <h2 style="background-color:navy;color:white"><span style="font-weight: bold;">Enlaces</span></h2>
+    <ul>
+      <li><a target="_blank" href="http://dotnet.microsoft.com/">Microsoft .NET</a></li>
+    </ul>
+    <ul>
+      <li>Conceptos necesarios:</li>
+      <ul>
+        <li><a title="¡Hola, mundo!" target="_blank" href="https://learn.microsoft.com/es-es/dotnet/csharp/tour-of-csharp/#hello-world">¡Hola,
+            mundo!</a></li>
+        <li><a title="Clases en C#" target="_blank" href="https://learn.microsoft.com/es-es/dotnet/csharp/fundamentals/types/classes">Clases</a></li>
+        <li><a title="Matrices en C#" target="_blank" href="https://learn.microsoft.com/es-es/dotnet/csharp/language-reference/builtin-types/arrays">Matrices</a></li>
+        <li><a target="_blank" href="https://learn.microsoft.com/es-es/dotnet/csharp/language-reference/builtin-types/reference-types">Cadenas</a></li>
+        <li><a title="Propiedades en C#" target="_blank" href="https://learn.microsoft.com/es-es/dotnet/csharp/properties">Propiedades</a></li>
+        <li>Manejo de la consola en C#, a través de <a target="_blank" href="https://learn.microsoft.com/es-es/dotnet/api/system.console">System.Console</a></li>
+        <li><a target="_blank" href="https://learn.microsoft.com/es-es/dotnet/csharp/fundamentals/object-oriented/polymorphism">Polimorfismo</a></li>
+      </ul>
+    </ul>
+    <h2 style="background-color:navy;color:white"><span style="font-weight: bold;">Ejercicios</span></h2>
+    <ol>
+      <li><p>
+      Escriba un programa que, dado un entero introducido por teclado,
+      calcule todos sus divisores enteros, mostrándolos por pantalla.
+      <details>
+        <summary>Código fuente</summary>
+        <pre>
+// Divisores (c) 2021 Baltasar MIT License &lt;baltasarq@uvigo.gal&gt;
+
+
+namespace Divisores {
+    using System;
+
+
+    class Program {
+        static void Main(string[] args)
+        {
+            Console.WriteLine( "Divisores\n" );
+
+            Console.Write("Introduzca entero: ");
+            int num = Convert.ToInt32( Console.ReadLine() );
+
+            Console.WriteLine( "1" );
+            for(int i = 2; i < num; ++i) {
+                if ( num % i == 0 ) {
+                    Console.WriteLine( i );
+                }
+            }
+
+            Console.WriteLine( num );
+        }
+    }
+}
+        </pre>
+      </details>
+      </p></li>
+      <li><p>
+        <p>
+        El juego de <i>master mind</i> consiste en acertar un número entero
+        que el ordenador ha escogido al azar. El jugador tiene todos los intentos
+        que desee hasta acertar el número.
+      </p>
+      <p>
+        Para esto, es necesario
+        utilizar bucles, la clase
+
+        <a target="_blank" href="https://docs.microsoft.com/es-es/dotnet/api/system.random?view=net-5.0">
+        <b>Random</b></a> y el manejo de la consola.
+      </p>
+      <p>
+        Añade al código fuente más abajo la posibilidad del conteo
+        de intentos.
+      </p>
+        <details>
+          <summary>Código fuente</summary>
+          <pre>
+// Mastermind (c) 2021 Baltasar MIT License &lt;baltasarq@uvigo.gal&gt;
+
+
+namespace Mastermind {
+    using System;
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var rnd = new Random();
+            string entrada;
+            int num;
+            int numUsr;
+
+            do {
+                num = rnd.Next() % 100;
+                Console.WriteLine( "MASTERMIND: Adivina el número (0-99)" );
+
+                do {
+                    do {
+                        Console.WriteLine( "Tu intento: ");
+                        entrada = Console.ReadLine().Trim();
+                    } while ( !int.TryParse( entrada, out numUsr ) );
+
+                    if( numUsr &lt; num ) {
+                        Console.WriteLine( "EL que he pensado es mayor..." );
+                    }
+                    else
+                    if( numUsr &gt; num ) {
+                        Console.WriteLine( "EL que he pensado es menor..." );
+                    }
+
+                } while( numUsr != num );
+
+                Console.WriteLine( "¡Acertaste!" );
+                Console.WriteLine( "Jugar otra vez (S/N): " );
+                entrada = Console.ReadLine().Trim().ToUpper();
+            } while( entrada[ 0 ] == 'S' );
+        }
+    }
+}
+          </pre>
+        </details>
+      </p></li>
+      <li><p>
+        Una terna pitagórica es un conjunto de tres números <i>a</i>, <i>b</i>
+        y <i>c</i>, para los que se cumple que <i>a² + b² = c²</i>.
+        Crea un programa que compruebe, para tres valores introducidos
+        por teclado, si se trata de una terna pitagórica o no.
+
+        <details>
+          <summary>Código fuente</summary>
+          <pre>
+// Terna pitagórica (c) 2021 Baltasar MIT License &lt;baltasarq@uvigo.gal&gt;
+
+namespace TernaPitagorica {
+    using System;
+
+
+    class Program {
+        static void Main(string[] args)
+        {
+            int[] v = new int[3];
+
+            Console.WriteLine("Terna pitagórica: v1² + v2² = v3²\n");
+
+            for(int i = 0; i < v.Length; i++) {
+                Console.Write( "Dame el valor " + ( i + 1 ) + ": " );
+                v[ i ] = Convert.ToInt32( Console.ReadLine() );
+            }
+
+            if ( ( ( v[ 0 ] * v[ 0 ] ) + ( v[ 1 ] * v[ 1 ] ) ) == ( v[ 2 ] * v[ 2 ] ) ) {
+                Console.WriteLine( "Es una terna pitagórica!!" );
+            } else {
+                Console.WriteLine( "NO es una terna pitagórica!!" );
+            }
+        }
+    }
+}
+          </pre>
+        </details>
+      </p></li>
+      <li>
+        <div> Crear un programa que permita generar
+          la <a target="_blank" href="https://es.wikipedia.org/wiki/Sucesi%C3%B3n_de_Fibonacci">sucesión de Fibonacci</a>. El programa pedirá un número
+          por teclado, que será el número de posiciones que es
+          necesario generar en la sucesión. <br>¿Puedes resolverlo con lambdas? <br>Por ejemplo: </div>
+        <pre>        Num. elementos?: -1
+
+        Num. elementos?: 0
+
+        Num. elementos?: 1
+        1
+        Num. elementos?: 2
+        1, 1
+        Num. elementos?: 3
+        1, 1, 2
+        Num. elementos?: 8
+        1, 1, 2, 3, 5, 8, 13, 21
+        </pre>
+      </li>
+      <li>
+        <div>Crear un programa que permita detectar
+          palabras o incluso frases palíndromas. La entrada se
+          realizará por teclado, y la salida por pantalla. Dicha salida
+          consistirá en las letras "T" si es palínromo, y "F" si no lo
+          es. El programa ignorará mayúsculas o minúsculas,
+          así como cualquier símbolo que no pertenezca al abecedario.
+          Por ejemplo: </div>
+        <pre>        Introduzca un posible palindromo: aba
+        T
+        Introduzca un posible palindromo: ada
+        T
+        Introduzca un posible palindromo: hada
+        F
+        Introduzca un posible palindromo: A cavar a Caravaca
+        T
+        Introduzca un posible palindromo: Odiosa, ¿has oido?
+        T
+        Introduzca un posible palindromo: A cavar a Caravaaca
+        F
+        </pre>
+      </li>
+      <li>
+        <div>Crear un programa que permita detectar
+          duplicados. Ante una secuencia de <span style="font-style: italic;">n
+            + 2</span> números enteros, separados por comas, espacios, o
+          guiones, el programa devolverá aquel número, o números,
+          si existen, que aparezca repetidos. Por ejemplo: </div>
+        <pre>        Introduzca secuencia enteros: 1 2 3 4
+        Duplicados: ninguno.
+
+        Introduzca secuencia enteros: 1, 2, 3-2 4, 2
+        Duplicados: 2
+
+        Introduzca secuencia enteros: 0, 1, 2, 3-2 4, 2, 0
+        Duplicados: 0, 2
+
+        </pre>
+      </li>
+      <li>
+        Elige uno de los siguientes ejercicios.
+        <ol>
+            <li><p>
+            Crea un programa que contenga la clase libro,
+            y una colección de libros. El programa permitirá introducir,
+            buscar y listar (todos los) libros. Será muy interesante el uso
+            de la colección
+              <a
+              href="https://docs.microsoft.com/es-es/dotnet/api/system.collections.generic.dictionary-2?view=net-5.0" target="_blank">
+                <b>Dictionary</b></a> para almacenar objetos de la clase libro.
+            <details>
+              <summary>Código fuente</summary>
+              <pre>
+                // Biblioteca (c) Baltasar MIT License &lt;baltasarq@uvigo.gal&gt;
+
+
+                  namespace Biblioteca {
+                      using System;
+                      using System.Collections.Generic;
+
+
+                      public class Libro {
+                          public Libro(string issn, string titulo, string autor)
+                          {
+                              this.ISSN = issn;
+                              this.Titulo = titulo;
+                              this.Autor = autor;
+                          }
+
+                          public string ISSN { get; set; }
+                          public string Titulo { get; set; }
+                          public string Autor { get; set; }
+
+                          public override string ToString()
+                          {
+                              return String.Format( "{0}/ \"{1}\" ({2})",
+                                                      this.ISSN, this.Titulo, this.Autor );
+                          }
+                      }
+
+                      public class Libros {
+                          public Libros()
+                          {
+                              this.libros = new Dictionary<string, Libro>();
+                          }
+
+                          public void Inserta(Libro l)
+                          {
+                              this.libros.Add( l.ISSN, l );
+                          }
+
+                          public Libro? Busca(string issn)
+                          {
+                              Libro? toret = null;
+
+                              this.libros.TryGetValue( issn, out toret );
+                              return toret;
+                          }
+
+                          public Libro[] Todos {
+                              get {
+                                  var toret = new Libro[ this.libros.Count ];
+                                  this.libros.Values.CopyTo( toret, 0 );
+
+                                  return toret;
+                              }
+                          }
+
+                          Dictionary<string, Libro> libros;
+                      }
+
+
+                      class Program {
+                          static string LeeConsola()
+                          {
+                              string? toret = Console.ReadLine();
+
+                              return toret ?? "";
+                          }
+
+                          static void Main(string[] args)
+                          {
+                              string entrada = "";
+                              var biblio = new Libros();
+
+                              Console.WriteLine( "Biblioteca\n" );
+
+                              while ( entrada != "0" ) {
+                                  Console.WriteLine( "\n\n1. Inserta\n2. Busca\n3. Lista\n0. Salir\nOpc.: " );
+                                  entrada = LeeConsola().Trim();
+
+                                  switch( entrada ) {
+                                      case "1":
+                                          string issn = "";
+                                          string titulo = "";
+                                          string autor = "";
+
+                                          Console.WriteLine( "Introduzca ISSN: " );
+                                          issn = LeeConsola().Trim();
+
+                                          Console.WriteLine( "Introduzca Titulo: " );
+                                          titulo = LeeConsola().Trim();
+
+                                          Console.WriteLine( "Introduzca Autor: " );
+                                          autor = LeeConsola().Trim();
+
+                                          biblio.Inserta( new Libro( issn, titulo, autor ) );
+                                          break;
+                                      case "2":
+                                          Console.WriteLine( "Introduzca ISSN: " );
+                                          entrada = LeeConsola().Trim();
+                                          Libro? l = biblio.Busca( entrada );
+                                          Console.WriteLine( l?.ToString() ?? "No encontrado." );
+                                          break;
+                                      case "3":
+                                          Libro[] libros = biblio.Todos;
+
+                                          foreach(Libro libro in libros) {
+                                              Console.WriteLine( libro );
+                                          }
+                                          break;
+                                      default:
+                                          if ( entrada != "0" ) {
+                                              Console.WriteLine( "Opc. incorrecta" );
+                                          }
+                                          break;
+                                  }
+                              }
+                          }
+                      }
+                  }
+              </pre>
+            </details>
+            </p></li>
+            <li>
+            <div>
+            Crea la clase <b>Punto</b>. Esta clase contendrá propiedades de
+            solo lectura para las coordenadas <i>X</i> e <i>Y</i>.
+            Debe proporcionar también un método <i>ToString()</i>, y un
+            objeto estático llamado Centro, con las
+            coordenadas 0, 0. Crea la clase <b>Linea</b>. Estará compuesta
+            por dos objetos <b>Punto</b>, el inicio y
+            el final. Debe soportar también un método <i>ToString()</i>, y
+            dos propiedades de solo lectura que devuelvan
+            el inicio y el final. Cree un programa que pida cuatro
+            coordenadas, cree dos objetos <b>Punto</b> y un objeto
+            <b>Linea</b>, y visualice los tres por pantalla.
+            </div>
+            <pre>            Punto 1
+
+            Coordenada X: 5
+            Coordenada Y: 6
+
+            Punto 2
+
+            Coordenada X: 8
+            Coordenada Y: 9
+
+            Volcado
+            (5, 6)
+            (8, 9)
+            (5, 6) - (8, 9)
+            </pre>
+        </li>
+
+        <li>
+            <div>
+            Crea la clase <b>Coche</b>. Esta clase contendrá propiedades de
+            solo lectura para <i>Marca</i>, <i>Fecha de fabricación</i>,
+            y <i>Modelo</i>.
+            Debe proporcionar también un método <i>ToString()</i>, y un
+            objeto estático llamado Seiscientos, con los datos
+            "Seat", 1957, "600E". Crea la clase <b>Concesionario</b>.
+            Estará compuesta por varios objetos <b>Coche</b> (por ejemplo, hasta introducir una cadena vacía en la marca). Debe soportar
+            también un método <i>ToString()</i> que liste los coches en el
+            concesionario, uno por línea, y una propiedad que devuelva
+            un <i>array</i> de coches, además de los métodos
+            <b>Coche</b>.<i>Add(<b>Coche</b>)</i>,
+            y <b>Coche</b>.<i>Clear()</i>.
+            Cree un programa que pida los datos de
+            varios coches y cree los objectos <b>Coche</b> correspondientes, así como un objeto
+            <b>Concesionario</b> donde introducirlos,
+            y visualice todos los datos por pantalla.
+            </div>
+            <pre>            Coche 1
+
+            Marca: Morris
+            Modelo: Mini
+            Año fabricación: 1959
+
+            Coche 2
+
+            Marca: Vokswagen
+            Modelo: Beetle
+            Año fabricación: 1938
+
+            Coche 3
+
+            Marca:
+
+            Volcado
+            1959: Morris Mini
+            1938: Volkswagen Beetle
+            </pre>
+        </li>
+      </ol>
+      </li><li>
+        <div>Supondremos que existe una
+          representación canónica de números de teléfono que
+          sigue el siguiente formato: 999-999 99 99. En realidad, es posible
+          encontrar números de teléfono con varios formatos, por
+          ejemplo, con letras en lugar de números. Estas letras se asocian
+          a los números de la siguiente forma: </div>
+        <pre>        2 = ABC
+        3 = DEF
+        4 = GHI
+        5 = JKL
+        6 = MNO
+        7 = PQRS
+        8 = TUV
+        9 = WXYZ
+        </pre>
+        <div> Así, el número de
+          teléfono GAL 2323BE es en su representación canónica:
+          425-23 23 23. Crear un programa que acepte números de
+          teléfono (hasta detectar la cadena vacía) y los convierta a
+          sus representaciones canónicas, visualizándolas por consola,
+          y con un asterisco a continuación en caso de que estén
+          repetidas con respecto a las ya introducidas. Utilice una clase para representar los números de
+          teléfono, y sobrecargue el método <code>ToString()</code>
+          para generar la versión canónica. Un ejemplo de la
+          ejecución del programa sería el siguiente: </div>
+        <pre>        Introduzca tlf. formato libre: GAL 2323BE
+        425-23 23 23
+        Introduzca tlf. formato libre: (988) 11 11 GAE
+        988-11 11 42
+        Introduzca tlf. formato libre: 425-23 23 23
+        425-23 23 23 *
+        </pre>
+      </li>
+      <li>Escribir un programa que acepte entradas
+        como cadenas de texto. El programa debe reconocer los enteros positivos,
+        los enteros negativos, los flotantes positivos, los flotantes negativos,
+        y debe hacer una salida ordenada de cada grupo de números. Se
+        sugiere hacer una clase base <strong>Numero</strong>, para enteros y
+        flotantes, y siendo los nodos terminales de la jerarquía <strong>FlotantePositivo</strong>
+        y <strong>FlotanteNegativo</strong>. Al menos debe haber un método
+        abstracto en <strong>Numero</strong>, que sirva para imprimir cada tipo
+        de número por pantalla. El método estático <b>Numero</b>.<i>Crea(s)</i> debe crear el objeto de la clase adecuada según el parámetro <i>s</i> (cadena de caracteres), que se le pase.</li>
+        <pre>        Introduzca valor: -1
+        entero negativo
+
+        Introduzca valor: -1.5
+        real negativo
+
+        Introduzca valor: -3.14
+        real negativo
+
+        Introduzca valor: 5
+        entero positivo
+
+        Introduzca valor: 8
+        entero positivo
+
+        Introduzca valor:
+
+        Volcado
+
+        Enteros negativos: -1
+        Reales negativos:  -1.5, -3.14
+        Enteros positivos: 5, 8
+
+        </pre>
+    </ol>
+    <p style="background-color:navy;color:white;text-align:right"><span style="font-weight: bold;">baltasarq@uvigo.gal</span></p>
+
+
+
+</body></html>
