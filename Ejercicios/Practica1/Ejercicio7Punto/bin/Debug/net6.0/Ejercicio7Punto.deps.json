@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Ejercicio7Punto/1.0.0": {
+        "runtime": {
+          "Ejercicio7Punto.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Ejercicio7Punto/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

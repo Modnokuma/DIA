@@ -1,0 +1,15 @@
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio7Punto\bin\Debug\net6.0\Ejercicio7Punto.exe
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio7Punto\bin\Debug\net6.0\Ejercicio7Punto.deps.json
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio7Punto\bin\Debug\net6.0\Ejercicio7Punto.runtimeconfig.json
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio7Punto\bin\Debug\net6.0\Ejercicio7Punto.dll
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio7Punto\bin\Debug\net6.0\Ejercicio7Punto.pdb
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio7Punto\obj\Debug\net6.0\Ejercicio7Punto.csproj.AssemblyReference.cache
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio7Punto\obj\Debug\net6.0\Ejercicio7Punto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio7Punto\obj\Debug\net6.0\Ejercicio7Punto.AssemblyInfoInputs.cache
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio7Punto\obj\Debug\net6.0\Ejercicio7Punto.AssemblyInfo.cs
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio7Punto\obj\Debug\net6.0\Ejercicio7Punto.csproj.CoreCompileInputs.cache
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio7Punto\obj\Debug\net6.0\Ejercicio7Punto.dll
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio7Punto\obj\Debug\net6.0\refint\Ejercicio7Punto.dll
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio7Punto\obj\Debug\net6.0\Ejercicio7Punto.pdb
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio7Punto\obj\Debug\net6.0\Ejercicio7Punto.genruntimeconfig.cache
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio7Punto\obj\Debug\net6.0\ref\Ejercicio7Punto.dll

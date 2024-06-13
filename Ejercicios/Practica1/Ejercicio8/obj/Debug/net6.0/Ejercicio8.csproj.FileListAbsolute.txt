@@ -1,0 +1,15 @@
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio8\bin\Debug\net6.0\Ejercicio8.exe
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio8\bin\Debug\net6.0\Ejercicio8.deps.json
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio8\bin\Debug\net6.0\Ejercicio8.runtimeconfig.json
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio8\bin\Debug\net6.0\Ejercicio8.dll
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio8\bin\Debug\net6.0\Ejercicio8.pdb
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio8\obj\Debug\net6.0\Ejercicio8.csproj.AssemblyReference.cache
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio8\obj\Debug\net6.0\Ejercicio8.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio8\obj\Debug\net6.0\Ejercicio8.AssemblyInfoInputs.cache
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio8\obj\Debug\net6.0\Ejercicio8.AssemblyInfo.cs
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio8\obj\Debug\net6.0\Ejercicio8.csproj.CoreCompileInputs.cache
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio8\obj\Debug\net6.0\Ejercicio8.dll
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio8\obj\Debug\net6.0\refint\Ejercicio8.dll
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio8\obj\Debug\net6.0\Ejercicio8.pdb
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio8\obj\Debug\net6.0\Ejercicio8.genruntimeconfig.cache
+C:\Users\DaniEL\RiderProjects\Practica1\Ejercicio8\obj\Debug\net6.0\ref\Ejercicio8.dll
