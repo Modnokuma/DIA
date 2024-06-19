@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Reparaciones>
+  <Reparacion>
+    <Aparato>
+      <NumeroSerie>FJKEUITR78</NumeroSerie>
+      <Modelo>radiop</Modelo>
+      <TarifaReparacion>5</TarifaReparacion>
+      <BandaAM>true</BandaAM>
+      <BandaFM>true</BandaFM>
+    </Aparato>
+    <Tiempo>5</Tiempo>
+    <PrecioPiezas>10</PrecioPiezas>
+  </Reparacion>
+  <Reparacion>
+    <Aparato>
+      <NumeroSerie>FOPEUIST56</NumeroSerie>
+      <Modelo>LG</Modelo>
+      <TarifaReparacion>10</TarifaReparacion>
+      <Pulgadas>50</Pulgadas>
+    </Aparato>
+    <Tiempo>14</Tiempo>
+    <PrecioPiezas>50</PrecioPiezas>
+  </Reparacion>
+</Reparaciones>
